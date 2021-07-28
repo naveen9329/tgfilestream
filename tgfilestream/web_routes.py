@@ -29,6 +29,11 @@ routes = web.RouteTableDef()
 ongoing_requests: Dict[str, int] = defaultdict(lambda: 0)
 
 
+@routes.head(r"/")
+async def handle_home(req: web.Request):
+    return "<h1>Hey i am alive 😉</h1>"
+
+
 @routes.head(r"/{id:\d+}/{name}")
 async def handle_head_request(req: web.Request) -> web.Response:
     return await handle_request(req, head=True)
