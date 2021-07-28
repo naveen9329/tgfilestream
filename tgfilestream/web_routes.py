@@ -31,7 +31,7 @@ ongoing_requests: Dict[str, int] = defaultdict(lambda: 0)
 
 @routes.get(r"/")
 async def handle_home(req: web.Request) -> web.Response:
-    return web.Response(status=200, text="<h1>Hey i am alive 😉</h1>")
+    return web.Response(status=200, text="Hey i am alive 😉")
 
 
 @routes.head(r"/{id:\d+}/{name}")
