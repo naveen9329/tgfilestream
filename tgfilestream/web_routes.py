@@ -29,7 +29,7 @@ routes = web.RouteTableDef()
 ongoing_requests: Dict[str, int] = defaultdict(lambda: 0)
 
 
-@routes.head(r"/")
+@routes.get(r"/")
 async def handle_home(req: web.Request) -> web.Response:
     return web.Response(status=200, text="<h1>Hey i am alive 😉</h1>")
 
